@@ -2,4 +2,6 @@
 
 body {
   background-color: rgb(233, 230, 230);
+  margin-inline: 1rem;
+  margin-block: 1rem;
 }
