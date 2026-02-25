@@ -1,10 +1,12 @@
-import Card from "./components/Card";
+import Overview from "./components/Overview";
+import StatusCard from "./components/StatusCard";
 
 const App = () => {
   return (
-    <div>
-      <Card status="Pending" value={24} />
-    </div>
+    <>
+      <StatusCard />
+      <Overview />
+    </>
   );
 };
 

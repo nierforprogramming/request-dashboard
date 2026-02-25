@@ -9,3 +9,25 @@ export const statusIcon = {
   Completed: IoMdCheckmarkCircleOutline,
   Cancelled: ImCancelCircle,
 };
+
+export const statusCard = [
+  {
+    status: "Active",
+    value: 12,
+  },
+
+  {
+    status: "Pending",
+    value: 12,
+  },
+
+  {
+    status: "Completed",
+    value: 12,
+  },
+
+  {
+    status: "Cancelled",
+    value: 12,
+  },
+];
