@@ -3,7 +3,7 @@ import Card from "./components/Card";
 const App = () => {
   return (
     <div>
-      <Card />
+      <Card status="Pending" value={24} />
     </div>
   );
 };
