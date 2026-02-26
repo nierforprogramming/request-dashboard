@@ -56,3 +56,18 @@ export const statusCard = [
     value: 12,
   },
 ];
+
+export const navlinks = [
+  {
+    name: "Home",
+    path: "/",
+  },
+  {
+    name: "Supervisor",
+    path: "/supervisor",
+  },
+  {
+    name: "Operator",
+    path: "/operator",
+  },
+];
