@@ -7,6 +7,7 @@ function TasksProvider({ children }) {
   const [tasks, setTasks] = useState([]);
   const [error, setError] = useState(null);
   const [filterText, setFilterText] = useState("All Tasks");
+  const [role, setRole] = useState("");
 
   useEffect(() => {
     const _getTasks = async () => {
@@ -56,6 +57,8 @@ function TasksProvider({ children }) {
         filteredTasks,
         setFilterText,
         filterText,
+        role,
+        setRole,
       }}
     >
       {children}

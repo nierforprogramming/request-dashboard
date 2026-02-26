@@ -95,6 +95,14 @@
       "status": "Active",
       "lastUpdate": "Feb 26, 2026",
       "assignedTo": "David"
+    },
+    {
+      "id": 13,
+      "title": "Implement backend for the app",
+      "content": "Use backend of your choice",
+      "status": "Active",
+      "lastUpdate": "Feb 27, 2026",
+      "assignedTo": "Niraj"
     }
   ]
 }

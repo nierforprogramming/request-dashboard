@@ -2,8 +2,10 @@ import React from "react";
 import { MdUpdate } from "react-icons/md";
 
 import { statusColor } from "../assets";
+import { BsThreeDots } from "react-icons/bs";
+import RoleAction from "./RoleAction";
 
-const TaskCard = ({ status, title, content, lastUpdate, agent }) => {
+const TaskCard = ({ status, title, content, lastUpdate, agent, role }) => {
   const bgColor = statusColor[status].bgColor;
   const color = statusColor[status].color;
   const borderColor = statusColor[status].borderColor;
@@ -25,6 +27,8 @@ const TaskCard = ({ status, title, content, lastUpdate, agent }) => {
           >
             <p>{status}</p>
           </div>
+
+          {role && <RoleAction permissions={role.permissions} />}
         </div>
 
         <div className="flex items-center space-x-1 text-gray-500">

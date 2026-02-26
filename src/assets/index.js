@@ -81,3 +81,15 @@ export const filterByStatus = [
   "Cancelled",
   "All Tasks",
 ];
+
+export const roleData = [
+  {
+    name: "Supervisor",
+    permissions: ["Change Status", "Reassign"],
+  },
+
+  {
+    name: "Operator",
+    permissions: ["Start", "Mark Complete"],
+  },
+];

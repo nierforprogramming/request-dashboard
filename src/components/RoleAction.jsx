@@ -1,10 +1,11 @@
-import { CiFilter } from "react-icons/ci";
-import { filterByStatus } from "../assets";
-import { useState } from "react";
+import React, { useState } from "react";
+import { BsThreeDots } from "react-icons/bs";
 
-const Filter = ({ filterText, handleFilter }) => {
+const RoleAction = ({ permissions }) => {
   const [open, setOpen] = useState(false);
-
+  const handleAction = async (event) => {
+    console.log(event);
+  };
   return (
     <>
       <div className="relative w-50">
@@ -12,26 +13,25 @@ const Filter = ({ filterText, handleFilter }) => {
           onClick={() => setOpen((prev) => !prev)}
           className="bg-white rounded-sm px-4 cursor-pointer flex items-center space-x-2 py-2"
         >
-          <span>
-            <CiFilter />
-          </span>
-          <button className="cursor-pointer font-semibold">{filterText}</button>
+          <button className="cursor-pointer  hover:bg-gray-200 p-2 rounded-sm font-semibold">
+            <BsThreeDots />
+          </button>
         </div>
 
         {open && (
           <div className="bg-white absolute py-4 top-12 w-full shadow-md">
             <ul className="ml-2">
-              <div className="font-semibold  px-2">Filter by Status</div>
-              {filterByStatus.map((status, index) => (
+              <div className="font-semibold  px-2">Project Action</div>
+              {permissions.map((action, index) => (
                 <li
                   onClick={(event) => {
-                    handleFilter(event);
+                    handleAction(event);
                     setOpen(false);
                   }}
-                  className={`hover:bg-gray-100 w-full cursor-pointer px-2 ${status == filterText ? "font-semibold" : ""}`}
+                  className={`hover:bg-gray-100 w-full cursor-pointer px-2`}
                   key={index}
                 >
-                  {status}
+                  {action}
                 </li>
               ))}
             </ul>
@@ -42,4 +42,4 @@ const Filter = ({ filterText, handleFilter }) => {
   );
 };
 
-export default Filter;
+export default RoleAction;
