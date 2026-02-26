@@ -3,7 +3,7 @@ import { fetchAPI } from "./errorHandler";
 
 // All tasks
 export const getTasks = async () => {
-  const result = await fetchAPI(`${baseURL}/tass`);
+  const result = await fetchAPI(`${baseURL}/tasks`);
 
   if (!result.success) {
     // Keep the error in the result
