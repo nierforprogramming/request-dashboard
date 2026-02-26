@@ -71,3 +71,5 @@ export const navlinks = [
     path: "/operator",
   },
 ];
+
+export const baseURL = "http://localhost:3000";

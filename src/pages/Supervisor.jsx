@@ -1,5 +1,11 @@
+import StatusCard from "../components/StatusCard";
+
 const Supervisor = () => {
-  return <div>Supervisor</div>;
+  return (
+    <>
+      <StatusCard />
+    </>
+  );
 };
 
 export default Supervisor;

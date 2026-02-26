@@ -8,7 +8,7 @@ const App = () => {
   return (
     <>
       <Navbar />
-      <div className="m-4">
+      <div className="m-4 pt-16">
         <Routes>
           <Route path="/supervisor" element={<Supervisor />} />
           <Route path="operator" element={<Operator />} />
