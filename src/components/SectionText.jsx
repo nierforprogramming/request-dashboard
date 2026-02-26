@@ -1,5 +1,5 @@
 const SectionText = ({ text }) => {
-  return <div className="text-xl font-semibold my-4">{text}</div>;
+  return <div className="text-2xl font-semibold my-6">{text}</div>;
 };
 
 export default SectionText;

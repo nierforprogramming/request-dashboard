@@ -10,6 +10,31 @@ export const statusIcon = {
   Cancelled: ImCancelCircle,
 };
 
+export const statusColor = {
+  Pending: {
+    bgColor: "bg-amber-300/30",
+    color: "text-amber-800",
+    borderColor: "border-amber-500",
+  },
+
+  Active: {
+    bgColor: "bg-blue-400/30",
+    color: "text-blue-600",
+    borderColor: "border-blue-500",
+  },
+  Completed: {
+    bgColor: "bg-emerald-300/30",
+    color: "text-emerald-800",
+    borderColor: "border-emerald-500",
+  },
+
+  Cancelled: {
+    bgColor: "bg-red-300/30",
+    color: "text-red-800",
+    borderColor: "border-red-500",
+  },
+};
+
 export const statusCard = [
   {
     status: "Active",

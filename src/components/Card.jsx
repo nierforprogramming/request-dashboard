@@ -12,7 +12,7 @@ const Card = ({ status, value }) => {
           {Icon && <Icon className="text-2xl" />}
         </div>
 
-        <div className="text-gray-600 font-semibold">
+        <div className="text-gray-500 font-semibold">
           <p>{status}</p>
         </div>
 
