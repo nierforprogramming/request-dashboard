@@ -1,4 +1,4 @@
-import { createContext, useEffect, useState } from "react";
+import { createContext, useEffect, useMemo, useState } from "react";
 import { getTasks } from "../api/tasks";
 
 const TasksContext = createContext();
@@ -6,6 +6,7 @@ const TasksContext = createContext();
 function TasksProvider({ children }) {
   const [tasks, setTasks] = useState([]);
   const [error, setError] = useState(null);
+  const [filterText, setFilterText] = useState("All Tasks");
 
   useEffect(() => {
     const _getTasks = async () => {
@@ -41,12 +42,20 @@ function TasksProvider({ children }) {
     },
   ];
 
+  // Filter by status
+  const filteredTasks = useMemo(() => {
+    if (filterText === "All Tasks") return tasks;
+    return tasks.filter((task) => task.status === filterText);
+  }, [tasks, filterText]);
   return (
     <TasksContext.Provider
       value={{
         error,
         tasks,
         statusTasks,
+        filteredTasks,
+        setFilterText,
+        filterText,
       }}
     >
       {children}

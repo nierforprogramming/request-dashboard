@@ -5,7 +5,7 @@ import TasksContext from "../contexts/tasks.context";
 import Error from "../components/Error";
 
 const Home = () => {
-  const { tasks, error } = useContext(TasksContext);
+  const { filteredTasks, error } = useContext(TasksContext);
   if (error) {
     return <Error error={error} />;
   }
@@ -13,7 +13,7 @@ const Home = () => {
     <>
       <Suspense fallback={<p>Loading...</p>}>
         <StatusCard />
-        <Overview tasks={tasks} />
+        <Overview tasks={filteredTasks} />
       </Suspense>
     </>
   );
