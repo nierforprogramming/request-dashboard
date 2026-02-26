@@ -14,7 +14,7 @@ const TaskCard = ({ status, title, content, lastUpdate, agent }) => {
       className="bg-white rounded-sm shadow-sm w-full max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl"
     >
       <div className="container p-6 space-y-3">
-        <div className="sm:flex space-y-3">
+        <div className=":flex space-y-3">
           <div className={`border-l-4 pl-2 ${borderColor}`}>
             <div className="task-title font-bold text-2xl">{title}</div>
             <div className="task-content text-gray-500">{content}</div>

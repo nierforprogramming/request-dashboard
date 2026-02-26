@@ -1,11 +1,16 @@
-import Overview from "./components/Overview";
-import StatusCard from "./components/StatusCard";
+import { Route, Routes } from "react-router-dom";
+import Supervisor from "./pages/Supervisor";
+import Operator from "./pages/Operator";
+import Home from "./pages/Home";
 
 const App = () => {
   return (
     <>
-      <StatusCard />
-      <Overview />
+      <Routes>
+        <Route path="/supervisor" element={<Supervisor />} />
+        <Route path="operator" element={<Operator />} />
+        <Route path="/" element={<Home />} />
+      </Routes>
     </>
   );
 };
