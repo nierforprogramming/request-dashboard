@@ -1,4 +1,4 @@
-import { Suspense, useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import StatusCard from "../components/StatusCard";
 import TasksContext from "../contexts/tasks.context";
 import Error from "../components/Error";
@@ -35,10 +35,8 @@ const Operator = () => {
 
   return (
     <>
-      <Suspense fallback={<p>Loading...</p>}>
-        <StatusCard statusTasks={statusTasks} />
-        <OperatorView tasks={tasks} />
-      </Suspense>
+      <StatusCard statusTasks={statusTasks} />
+      <OperatorView tasks={tasks} />
     </>
   );
 };

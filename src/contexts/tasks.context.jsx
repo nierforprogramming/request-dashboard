@@ -89,7 +89,9 @@ function TasksProvider({ children }) {
 
   // It updates status of the tasks
   const updateTaskStatus = async (taskId, nextStatus) => {
-    const res = await updateTaskStatusAPI(Number(taskId), nextStatus);
+    const id = Number(taskId);
+
+    const res = await updateTaskStatusAPI(id, nextStatus);
     if (!res.success) {
       setError(res.error);
       return;

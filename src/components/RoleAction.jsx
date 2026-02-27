@@ -72,7 +72,7 @@ const RoleAction = ({ role, taskId, taskStatus }) => {
           <div className="bg-white absolute py-4 top-12 w-full shadow-md">
             <ul className="ml-2">
               <div className="font-semibold  px-2">Project Action</div>
-              {actions.map((action, index) => (
+              {actions.map((action) => (
                 <li
                   onClick={(e) => {
                     e.preventDefault();
@@ -80,7 +80,7 @@ const RoleAction = ({ role, taskId, taskStatus }) => {
                     handleAction(action);
                   }}
                   className={`hover:bg-gray-100 w-full cursor-pointer px-2`}
-                  key={index}
+                  key={action}
                 >
                   {action}
                 </li>

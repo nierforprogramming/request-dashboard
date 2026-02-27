@@ -22,14 +22,14 @@ const Filter = ({ filterText, handleFilter }) => {
           <div className="bg-white absolute py-4 top-12 w-full shadow-md">
             <ul className="ml-2">
               <div className="font-semibold  px-2">Filter by Status</div>
-              {filterByStatus.map((status, index) => (
+              {filterByStatus.map((status) => (
                 <li
                   onClick={(event) => {
                     handleFilter(event);
                     setOpen(false);
                   }}
                   className={`hover:bg-gray-100 w-full cursor-pointer px-2 ${status == filterText ? "font-semibold" : ""}`}
-                  key={index}
+                  key={status}
                 >
                   {status}
                 </li>

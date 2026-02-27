@@ -1,4 +1,4 @@
-import { Suspense, useContext } from "react";
+import { useContext } from "react";
 import Overview from "../components/Overview";
 import StatusCard from "../components/StatusCard";
 import TasksContext from "../contexts/tasks.context";
@@ -11,10 +11,8 @@ const Home = () => {
   }
   return (
     <>
-      <Suspense fallback={<p>Loading...</p>}>
-        <StatusCard statusTasks={statusTasks} />
-        <Overview tasks={filteredTasks} />
-      </Suspense>
+      <StatusCard statusTasks={statusTasks} />
+      <Overview tasks={filteredTasks} />
     </>
   );
 };

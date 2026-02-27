@@ -12,7 +12,7 @@
       "id": "2",
       "title": "Update dashboard UI",
       "content": "Improve spacing and card alignment",
-      "status": "Active",
+      "status": "Cancelled",
       "lastUpdate": "Fri Feb 27 2026",
       "assignedTo": "Bob"
     },
@@ -20,7 +20,7 @@
       "id": "3",
       "title": "Add search functionality",
       "content": "Implement search filter for tasks",
-      "status": "Pending",
+      "status": "Completed",
       "lastUpdate": "Fri Feb 27 2026",
       "assignedTo": "Charlie"
     },
@@ -52,7 +52,7 @@
       "id": "7",
       "title": "Fix mobile responsiveness",
       "content": "Dashboard breaks on small screens",
-      "status": "Pending",
+      "status": "Completed",
       "lastUpdate": "Fri Feb 27 2026",
       "assignedTo": "Niraj"
     },
@@ -60,7 +60,7 @@
       "id": "8",
       "title": "Add cancel confirmation",
       "content": "Prompt before cancelling task",
-      "status": "Active",
+      "status": "Completed",
       "lastUpdate": "Fri Feb 27 2026",
       "assignedTo": "Niraj"
     },
@@ -76,7 +76,7 @@
       "id": "10",
       "title": "Fix status badge colors",
       "content": "Incorrect colors for statuses",
-      "status": "Pending",
+      "status": "Completed",
       "lastUpdate": "Fri Feb 27 2026",
       "assignedTo": "Niraj"
     },
@@ -84,7 +84,7 @@
       "id": "11",
       "title": "Add task filtering",
       "content": "Filter tasks by status",
-      "status": "Pending",
+      "status": "Completed",
       "lastUpdate": "Fri Feb 27 2026",
       "assignedTo": "Niraj"
     },
@@ -92,7 +92,7 @@
       "id": "12",
       "title": "Implement role switcher",
       "content": "Toggle between Supervisor and Operator",
-      "status": "Pending",
+      "status": "Completed",
       "lastUpdate": "Fri Feb 27 2026",
       "assignedTo": "David"
     },
@@ -100,7 +100,7 @@
       "id": "13",
       "title": "Implement backend for the app",
       "content": "Use backend of your choice",
-      "status": "Pending",
+      "status": "Cancelled",
       "lastUpdate": "Fri Feb 27 2026",
       "assignedTo": "Niraj"
     }

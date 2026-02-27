@@ -1,4 +1,4 @@
-import { Suspense, useContext } from "react";
+import { useContext } from "react";
 import StatusCard from "../components/StatusCard";
 import TasksContext from "../contexts/tasks.context";
 import SupervisorView from "../components/SupervisorView";
@@ -12,11 +12,9 @@ const Supervisor = () => {
   }
   return (
     <>
-      <Suspense fallback={<p>Loading...</p>}>
-        <StatusCard statusTasks={statusTasks} />
-        <WorkLoad />
-        <SupervisorView tasks={filteredTasks} />
-      </Suspense>
+      <StatusCard statusTasks={statusTasks} />
+      <WorkLoad />
+      <SupervisorView tasks={filteredTasks} />
     </>
   );
 };

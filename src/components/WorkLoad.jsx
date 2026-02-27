@@ -10,10 +10,10 @@ const WorkLoad = () => {
     <>
       <SectionText text="Workload Summary" />
       <div className="grid gap-3 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-        {workloads.map((workload, index) => (
+        {workloads.map((workload) => (
           <Card
             className="font-semibold text-xl"
-            key={index}
+            key={workload.name}
             status="Active"
             value={`${workload.name} ${workload.active}`}
           />
