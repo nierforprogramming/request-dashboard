@@ -35,7 +35,7 @@ A role-based request management dashboard that allows Supervisors and Operators 
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/nierforprogramming/request-operations-dashboard.git
+git clone https://github.com/nierforprogramming/request-dashboard
 cd request-operations-dashboard
 ```
 
