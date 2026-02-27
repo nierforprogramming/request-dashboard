@@ -1,9 +1,7 @@
-import React, { useContext } from "react";
 import Card from "./Card";
 import TasksContext from "../contexts/tasks.context";
 
-const StatusCard = () => {
-  const { statusTasks } = useContext(TasksContext);
+const StatusCard = ({ statusTasks }) => {
   return (
     <div className="grid gap-3 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
       {statusTasks.map((status, index) => (

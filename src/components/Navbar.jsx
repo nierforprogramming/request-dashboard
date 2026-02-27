@@ -8,12 +8,15 @@ const Navbar = () => {
 
   return (
     <nav className="flex h-16 fixed top-0 z-50 w-full items-center bg-white px-4 space-x-4">
-      <div className="flex space-x-2 mr-auto items-center cursor-pointer">
+      <NavLink
+        to="/"
+        className="flex space-x-2 mr-auto items-center cursor-pointer"
+      >
         <div className="bg-blue-600 px-4 py-2 rounded-sm text-2xl text-white">
           R
         </div>
         <div className="text-2xl font-semibold">Requests</div>
-      </div>
+      </NavLink>
 
       <div className="flex space-x-2">
         {navlinks.map((link, index) => (

@@ -5,14 +5,14 @@ import TasksContext from "../contexts/tasks.context";
 import Error from "../components/Error";
 
 const Home = () => {
-  const { filteredTasks, error } = useContext(TasksContext);
+  const { filteredTasks, error, statusTasks } = useContext(TasksContext);
   if (error) {
     return <Error error={error} />;
   }
   return (
     <>
       <Suspense fallback={<p>Loading...</p>}>
-        <StatusCard />
+        <StatusCard statusTasks={statusTasks} />
         <Overview tasks={filteredTasks} />
       </Suspense>
     </>

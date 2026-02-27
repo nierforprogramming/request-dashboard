@@ -7,7 +7,7 @@ const Filter = ({ filterText, handleFilter }) => {
 
   return (
     <>
-      <div className="relative w-50">
+      <div className="relative w-50 z-49">
         <div
           onClick={() => setOpen((prev) => !prev)}
           className="bg-white rounded-sm px-4 cursor-pointer flex items-center space-x-2 py-2"

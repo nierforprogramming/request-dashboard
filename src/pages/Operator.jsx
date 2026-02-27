@@ -7,17 +7,27 @@ import { operatorData } from "../assets";
 
 const Operator = () => {
   const [operator, setOperator] = useState({});
-  const { perOperatorTasks, error } = useContext(TasksContext);
+  const { perOperatorTasks, perOperatorStatus, error } =
+    useContext(TasksContext);
   const [tasks, setTasks] = useState([]);
+  const [statusTasks, setStatusTasks] = useState([]);
 
   useEffect(() => {
-    const handleTasks = async () => {
+    const handleTasks = () => {
       setOperator(operatorData[0]);
       const operatorTask = perOperatorTasks(operator);
       setTasks(operatorTask);
     };
     handleTasks();
   }, [operator, perOperatorTasks]);
+
+  useEffect(() => {
+    const handleStatus = () => {
+      const operatorStatus = perOperatorStatus(operator);
+      setStatusTasks(operatorStatus);
+    };
+    handleStatus();
+  }, [operator, perOperatorStatus]);
 
   if (error) {
     return <Error error={error} />;
@@ -28,7 +38,7 @@ const Operator = () => {
   return (
     <>
       <Suspense fallback={<p>Loading...</p>}>
-        <StatusCard />
+        <StatusCard statusTasks={statusTasks} />
         <OperatorView tasks={tasks} />
       </Suspense>
     </>

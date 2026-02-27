@@ -5,14 +5,14 @@ import SupervisorView from "../components/SupervisorView";
 import Error from "../components/Error";
 
 const Supervisor = () => {
-  const { filteredTasks, error } = useContext(TasksContext);
+  const { filteredTasks, error, statusTasks } = useContext(TasksContext);
   if (error) {
     return <Error error={error} />;
   }
   return (
     <>
       <Suspense fallback={<p>Loading...</p>}>
-        <StatusCard />
+        <StatusCard statusTasks={statusTasks} />
         <SupervisorView tasks={filteredTasks} />
       </Suspense>
     </>

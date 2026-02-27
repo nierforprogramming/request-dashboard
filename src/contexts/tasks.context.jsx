@@ -54,6 +54,38 @@ function TasksProvider({ children }) {
     return tasks.filter((task) => task.assignedTo === operator.name);
   };
 
+  const perOperatorStatus = (operator) => {
+    return [
+      {
+        status: "Pending",
+        value: tasks?.filter(
+          (task) =>
+            task.status === "Pending" && task.assignedTo === operator.name,
+        ).length,
+      },
+      {
+        status: "Active",
+        value: tasks?.filter(
+          (task) =>
+            task.status === "Active" && task.assignedTo === operator.name,
+        ).length,
+      },
+      {
+        status: "Completed",
+        value: tasks?.filter(
+          (task) =>
+            task.status === "Completed" && task.assignedTo === operator.name,
+        ).length,
+      },
+      {
+        status: "Cancelled",
+        value: tasks?.filter(
+          (task) =>
+            task.status === "Cancelled" && task.assignedTo === operator.name,
+        ).length,
+      },
+    ];
+  };
   return (
     <TasksContext.Provider
       value={{
@@ -66,6 +98,7 @@ function TasksProvider({ children }) {
         role,
         setRole,
         perOperatorTasks,
+        perOperatorStatus,
       }}
     >
       {children}
