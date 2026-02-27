@@ -52,7 +52,7 @@
       "status": "Cancelled",
       "lastUpdate": "Fri Feb 27 2026",
       "assignedTo": "Bob",
-      "supervisorMessage": ""
+      "supervisorMessage": "Project restructure"
     },
     {
       "id": "7",
@@ -76,7 +76,7 @@
       "id": "9",
       "title": "Optimize API calls",
       "content": "Reduce unnecessary network requests",
-      "status": "Pending",
+      "status": "Active",
       "lastUpdate": "Fri Feb 27 2026",
       "assignedTo": "Alice",
       "supervisorMessage": ""

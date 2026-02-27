@@ -99,4 +99,16 @@ export const operatorData = [
     id: 1,
     name: "Niraj",
   },
+  {
+    id: 2,
+    name: "Bob",
+  },
+  {
+    id: 3,
+    name: "David",
+  },
+  {
+    id: 4,
+    name: "Charlie",
+  },
 ];

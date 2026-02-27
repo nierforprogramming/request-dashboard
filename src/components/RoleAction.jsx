@@ -48,6 +48,11 @@ const RoleAction = ({ role, taskId, taskStatus }) => {
     }
 
     // Reassign is for later
+    if (action === "Reassign") {
+      setStatusModalOpen(true);
+      setOpen(false);
+      return;
+    }
   };
 
   if (actions.length === 0) return null;

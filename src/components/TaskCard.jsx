@@ -48,6 +48,7 @@ const TaskCard = ({
         </div>
 
         <div className="flex text-gray-500 space-x-1">
+          <div className="font-semibold mr-auto">ID: {id}</div>
           <div>Assigned To: </div>
           <div> {agent}</div>
         </div>

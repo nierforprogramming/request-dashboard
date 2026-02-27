@@ -20,6 +20,8 @@ const OperatorView = ({ tasks }) => {
     return tasks.filter((task) => task.status === filterText);
   }, [tasks, filterText]);
 
+  console.log(tasks);
+
   return (
     <>
       <div className="flex justify-between items-center">
