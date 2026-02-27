@@ -12,8 +12,8 @@
       "id": "2",
       "title": "Update dashboard UI",
       "content": "Improve spacing and card alignment",
-      "status": "Active",
-      "lastUpdate": "Feb 25, 2026",
+      "status": "Pending",
+      "lastUpdate": "Fri Feb 27 2026",
       "assignedTo": "Bob"
     },
     {
@@ -36,23 +36,23 @@
       "id": "5",
       "title": "Implement task reassignment",
       "content": "Supervisor can reassign tasks",
-      "status": "Pending",
-      "lastUpdate": "Feb 26, 2026",
+      "status": "Completed",
+      "lastUpdate": "Fri Feb 27 2026",
       "assignedTo": "Alice"
     },
     {
       "id": "6",
       "title": "Add loading skeleton",
       "content": "Show skeleton while fetching data",
-      "status": "Active",
-      "lastUpdate": "Feb 24, 2026",
+      "status": "Cancelled",
+      "lastUpdate": "Fri Feb 27 2026",
       "assignedTo": "Bob"
     },
     {
       "id": "7",
       "title": "Fix mobile responsiveness",
       "content": "Dashboard breaks on small screens",
-      "status": "Completed",
+      "status": "Pending",
       "lastUpdate": "Fri Feb 27 2026",
       "assignedTo": "Niraj"
     },
@@ -60,7 +60,7 @@
       "id": "8",
       "title": "Add cancel confirmation",
       "content": "Prompt before cancelling task",
-      "status": "Completed",
+      "status": "Pending",
       "lastUpdate": "Fri Feb 27 2026",
       "assignedTo": "Niraj"
     },
@@ -76,7 +76,7 @@
       "id": "10",
       "title": "Fix status badge colors",
       "content": "Incorrect colors for statuses",
-      "status": "Completed",
+      "status": "Pending",
       "lastUpdate": "Fri Feb 27 2026",
       "assignedTo": "Niraj"
     },
@@ -84,8 +84,8 @@
       "id": "11",
       "title": "Add task filtering",
       "content": "Filter tasks by status",
-      "status": "Cancelled",
-      "lastUpdate": "Feb 17, 2026",
+      "status": "Completed",
+      "lastUpdate": "Fri Feb 27 2026",
       "assignedTo": "Niraj"
     },
     {

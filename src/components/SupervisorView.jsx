@@ -25,6 +25,7 @@ const SupervisorView = ({ tasks }) => {
         {tasks.map((task) => (
           <TaskCard
             key={task.id}
+            id={task.id}
             status={task.status}
             title={task.title}
             content={task.content}

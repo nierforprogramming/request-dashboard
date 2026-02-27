@@ -1,5 +1,4 @@
 import Card from "./Card";
-import TasksContext from "../contexts/tasks.context";
 
 const StatusCard = ({ statusTasks }) => {
   return (

@@ -1,18 +1,12 @@
-import React from "react";
 import { MdUpdate } from "react-icons/md";
 
 import { statusColor } from "../assets";
-import { BsThreeDots } from "react-icons/bs";
 import RoleAction from "./RoleAction";
 
 const TaskCard = ({ id, status, title, content, lastUpdate, agent, role }) => {
   const bgColor = statusColor[status].bgColor;
   const color = statusColor[status].color;
   const borderColor = statusColor[status].borderColor;
-
-  const isFinal = status === "Completed" || status === "Cancelled";
-  const canShowActions = role && !isFinal;
-
   return (
     <div
       id="task-card"
@@ -31,9 +25,7 @@ const TaskCard = ({ id, status, title, content, lastUpdate, agent, role }) => {
             <p>{status}</p>
           </div>
 
-          {canShowActions && (
-            <RoleAction role={role} taskId={id} taskStatus={status} />
-          )}
+          {role && <RoleAction role={role} taskId={id} taskStatus={status} />}
         </div>
 
         <div className="flex items-center space-x-1 text-gray-500">
