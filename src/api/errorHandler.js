@@ -1,6 +1,12 @@
-export const fetchAPI = async (url) => {
+export const fetchAPI = async (url, options = {}) => {
   try {
-    const res = await fetch(url);
+    const res = await fetch(url, {
+      headers: {
+        "Content-Type": "application/json",
+        ...(options.headers || {}),
+      },
+      ...options,
+    });
 
     // Server / HTTP errors
     if (!res.ok) {

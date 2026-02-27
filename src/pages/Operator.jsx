@@ -33,8 +33,6 @@ const Operator = () => {
     return <Error error={error} />;
   }
 
-  console.log(tasks);
-
   return (
     <>
       <Suspense fallback={<p>Loading...</p>}>

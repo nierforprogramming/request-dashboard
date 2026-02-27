@@ -1,5 +1,5 @@
 import { createContext, useEffect, useMemo, useState } from "react";
-import { getTasks } from "../api/tasks";
+import { getTasks, updateTaskStatusAPI } from "../api/tasks";
 
 const TasksContext = createContext();
 
@@ -86,6 +86,22 @@ function TasksProvider({ children }) {
       },
     ];
   };
+
+  // It updates status of the tasks
+  const updateTaskStatus = async (taskId, nextStatus) => {
+    const res = await updateTaskStatusAPI(Number(taskId), nextStatus);
+    if (!res.success) {
+      setError(res.error);
+      return;
+    }
+
+    setTasks((prev) =>
+      prev.map((task) =>
+        task.id === taskId ? { ...task, status: nextStatus } : task,
+      ),
+    );
+  };
+
   return (
     <TasksContext.Provider
       value={{
@@ -99,6 +115,7 @@ function TasksProvider({ children }) {
         setRole,
         perOperatorTasks,
         perOperatorStatus,
+        updateTaskStatus,
       }}
     >
       {children}

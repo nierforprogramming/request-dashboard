@@ -1,7 +1,7 @@
 {
   "tasks": [
     {
-      "id": 1,
+      "id": "1",
       "title": "Fix login validation bug",
       "content": "Users can submit empty password field",
       "status": "Pending",
@@ -9,7 +9,7 @@
       "assignedTo": "Alice"
     },
     {
-      "id": 2,
+      "id": "2",
       "title": "Update dashboard UI",
       "content": "Improve spacing and card alignment",
       "status": "Active",
@@ -17,7 +17,7 @@
       "assignedTo": "Bob"
     },
     {
-      "id": 3,
+      "id": "3",
       "title": "Add search functionality",
       "content": "Implement search filter for tasks",
       "status": "Completed",
@@ -25,7 +25,7 @@
       "assignedTo": "Charlie"
     },
     {
-      "id": 4,
+      "id": "4",
       "title": "Fix API timeout issue",
       "content": "Requests taking too long to respond",
       "status": "Cancelled",
@@ -33,7 +33,7 @@
       "assignedTo": "David"
     },
     {
-      "id": 5,
+      "id": "5",
       "title": "Implement task reassignment",
       "content": "Supervisor can reassign tasks",
       "status": "Pending",
@@ -41,7 +41,7 @@
       "assignedTo": "Alice"
     },
     {
-      "id": 6,
+      "id": "6",
       "title": "Add loading skeleton",
       "content": "Show skeleton while fetching data",
       "status": "Active",
@@ -49,23 +49,23 @@
       "assignedTo": "Bob"
     },
     {
-      "id": 7,
+      "id": "7",
       "title": "Fix mobile responsiveness",
       "content": "Dashboard breaks on small screens",
       "status": "Completed",
-      "lastUpdate": "Feb 21, 2026",
+      "lastUpdate": "Fri Feb 27 2026",
       "assignedTo": "Niraj"
     },
     {
-      "id": 8,
+      "id": "8",
       "title": "Add cancel confirmation",
       "content": "Prompt before cancelling task",
-      "status": "Pending",
-      "lastUpdate": "Feb 26, 2026",
+      "status": "Completed",
+      "lastUpdate": "Fri Feb 27 2026",
       "assignedTo": "Niraj"
     },
     {
-      "id": 9,
+      "id": "9",
       "title": "Optimize API calls",
       "content": "Reduce unnecessary network requests",
       "status": "Active",
@@ -73,15 +73,15 @@
       "assignedTo": "Alice"
     },
     {
-      "id": 10,
+      "id": "10",
       "title": "Fix status badge colors",
       "content": "Incorrect colors for statuses",
       "status": "Completed",
-      "lastUpdate": "Feb 19, 2026",
+      "lastUpdate": "Fri Feb 27 2026",
       "assignedTo": "Niraj"
     },
     {
-      "id": 11,
+      "id": "11",
       "title": "Add task filtering",
       "content": "Filter tasks by status",
       "status": "Cancelled",
@@ -89,7 +89,7 @@
       "assignedTo": "Niraj"
     },
     {
-      "id": 12,
+      "id": "12",
       "title": "Implement role switcher",
       "content": "Toggle between Supervisor and Operator",
       "status": "Active",
@@ -97,11 +97,11 @@
       "assignedTo": "David"
     },
     {
-      "id": 13,
+      "id": "13",
       "title": "Implement backend for the app",
       "content": "Use backend of your choice",
-      "status": "Active",
-      "lastUpdate": "Feb 27, 2026",
+      "status": "Completed",
+      "lastUpdate": "Fri Feb 27 2026",
       "assignedTo": "Niraj"
     }
   ]
