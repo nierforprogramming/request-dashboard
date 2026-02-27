@@ -36,7 +36,14 @@ const TaskCard = ({
             <p>{status}</p>
           </div>
 
-          {role && <RoleAction role={role} taskId={id} taskStatus={status} />}
+          {role && (
+            <RoleAction
+              role={role}
+              taskId={id}
+              taskStatus={status}
+              currentAgent={agent}
+            />
+          )}
         </div>
 
         <div className="flex items-center space-x-1 text-gray-500">

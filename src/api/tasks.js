@@ -20,3 +20,11 @@ export const updateTaskStatusAPI = async (taskId, payload) => {
     body: JSON.stringify(payload),
   });
 };
+
+// Reassigning the tasks
+export const reassignTaskAPI = async (taskId, payload) => {
+  return await fetchAPI(`${baseURL}/tasks/${taskId}`, {
+    method: "PATCH",
+    body: JSON.stringify(payload),
+  });
+};

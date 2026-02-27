@@ -1,5 +1,5 @@
 import { createContext, useEffect, useMemo, useState } from "react";
-import { getTasks, updateTaskStatusAPI } from "../api/tasks";
+import { getTasks, reassignTaskAPI, updateTaskStatusAPI } from "../api/tasks";
 
 const TasksContext = createContext();
 
@@ -116,6 +116,30 @@ function TasksProvider({ children }) {
     );
   };
 
+  // Reassign tasks
+  const reassignTask = async (taskId, nextAgent, message = "") => {
+    const id = Number(taskId);
+
+    const payload = {
+      assignedTo: nextAgent,
+      lastUpdate: new Date().toDateString(),
+    };
+
+    if (message?.trim()) payload.supervisorMessage = message.trim();
+
+    const res = await reassignTaskAPI(id, payload);
+    if (!res.success) {
+      setError(res.error);
+      return;
+    }
+
+    setTasks((prev) =>
+      prev.map((task) => (task.id === taskId ? { ...task, ...payload } : task)),
+    );
+
+    return;
+  };
+
   // Get workload for active status
   const getActiveWorkLoad = () => {
     // Removes duplicate name and converts back to array
@@ -145,6 +169,7 @@ function TasksProvider({ children }) {
         perOperatorStatus,
         updateTaskStatus,
         getActiveWorkLoad,
+        reassignTask,
       }}
     >
       {children}

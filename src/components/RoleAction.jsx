@@ -2,11 +2,19 @@ import React, { useContext, useMemo, useState } from "react";
 import { BsThreeDots } from "react-icons/bs";
 import TasksContext from "../contexts/tasks.context";
 import StatusModal from "./StatusModal";
+import ReassignModal from "./ReassignModal";
+import { operatorData } from "../assets";
 
-const RoleAction = ({ role, taskId, taskStatus }) => {
+const RoleAction = ({ role, taskId, taskStatus, currentAgent }) => {
   const [open, setOpen] = useState(false);
-  const { updateTaskStatus } = useContext(TasksContext);
+  const { updateTaskStatus, reassignTask } = useContext(TasksContext);
   const [statusModalOpen, setStatusModalOpen] = useState(false);
+  const [reassignModalOpen, setReassignModalOpen] = useState(false);
+
+  const agents = useMemo(
+    () => operatorData.map((operator) => operator.name),
+    [],
+  );
 
   const actions = useMemo(() => {
     // Supervisor will have full controll whichever status it will be
@@ -49,7 +57,7 @@ const RoleAction = ({ role, taskId, taskStatus }) => {
 
     // Reassign is for later
     if (action === "Reassign") {
-      setStatusModalOpen(true);
+      setReassignModalOpen(true);
       setOpen(false);
       return;
     }
@@ -102,6 +110,18 @@ const RoleAction = ({ role, taskId, taskStatus }) => {
           onSubmit={(newStatus, message) => {
             updateTaskStatus(taskId, newStatus, message);
             setStatusModalOpen(false);
+          }}
+        />
+
+        {/* Reassign modal */}
+        <ReassignModal
+          open={reassignModalOpen}
+          currentAgent={currentAgent}
+          agents={agents}
+          onClose={() => setReassignModalOpen(false)}
+          onSubmit={async (newAgent, message) => {
+            await reassignTask(taskId, newAgent, message);
+            setReassignModalOpen(false);
           }}
         />
       </div>

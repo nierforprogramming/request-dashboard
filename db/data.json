@@ -5,15 +5,15 @@
       "title": "Fix login validation bug",
       "content": "Users can submit empty password field",
       "status": "Pending",
-      "lastUpdate": "Feb 26, 2026",
-      "assignedTo": "Alice",
+      "lastUpdate": "Fri Feb 27 2026",
+      "assignedTo": "Charlie",
       "supervisorMessage": ""
     },
     {
       "id": "2",
       "title": "Update dashboard UI",
       "content": "Improve spacing and card alignment",
-      "status": "Cancelled",
+      "status": "Active",
       "lastUpdate": "Fri Feb 27 2026",
       "assignedTo": "Bob",
       "supervisorMessage": "No longer needed"
@@ -22,7 +22,7 @@
       "id": "3",
       "title": "Add search functionality",
       "content": "Implement search filter for tasks",
-      "status": "Cancelled",
+      "status": "Active",
       "lastUpdate": "Fri Feb 27 2026",
       "assignedTo": "Charlie",
       "supervisorMessage": "No need"
@@ -42,7 +42,7 @@
       "content": "Supervisor can reassign tasks",
       "status": "Pending",
       "lastUpdate": "Fri Feb 27 2026",
-      "assignedTo": "Alice",
+      "assignedTo": "Bob",
       "supervisorMessage": ""
     },
     {
@@ -67,7 +67,7 @@
       "id": "8",
       "title": "Add cancel confirmation",
       "content": "Prompt before cancelling task",
-      "status": "Completed",
+      "status": "Pending",
       "lastUpdate": "Fri Feb 27 2026",
       "assignedTo": "Niraj",
       "supervisorMessage": ""
@@ -78,14 +78,14 @@
       "content": "Reduce unnecessary network requests",
       "status": "Active",
       "lastUpdate": "Fri Feb 27 2026",
-      "assignedTo": "Alice",
-      "supervisorMessage": ""
+      "assignedTo": "Niraj",
+      "supervisorMessage": "Urgent task"
     },
     {
       "id": "10",
       "title": "Fix status badge colors",
       "content": "Incorrect colors for statuses",
-      "status": "Completed",
+      "status": "Pending",
       "lastUpdate": "Fri Feb 27 2026",
       "assignedTo": "Niraj",
       "supervisorMessage": ""
@@ -94,7 +94,7 @@
       "id": "11",
       "title": "Add task filtering",
       "content": "Filter tasks by status",
-      "status": "Completed",
+      "status": "Active",
       "lastUpdate": "Fri Feb 27 2026",
       "assignedTo": "Niraj",
       "supervisorMessage": ""
