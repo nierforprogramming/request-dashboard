@@ -9,11 +9,11 @@ const RoleAction = ({ permissions }) => {
   return (
     <>
       <div className="relative w-50">
-        <div
-          onClick={() => setOpen((prev) => !prev)}
-          className="bg-white rounded-sm px-4 cursor-pointer flex items-center space-x-2 py-2"
-        >
-          <button className="cursor-pointer  hover:bg-gray-200 p-2 rounded-sm font-semibold">
+        <div className="bg-white rounded-sm px-4  flex items-center space-x-2 py-2">
+          <button
+            onClick={() => setOpen((prev) => !prev)}
+            className="cursor-pointer  hover:bg-gray-200 p-2 rounded-sm font-semibold"
+          >
             <BsThreeDots />
           </button>
         </div>

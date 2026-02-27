@@ -5,20 +5,20 @@ import TaskCard from "./TaskCard";
 import TasksContext from "../contexts/tasks.context";
 import { roleData } from "../assets";
 
-const SupervisorView = ({ tasks }) => {
+const OperatorView = ({ tasks }) => {
   const { filterText, role, setRole, setFilterText } = useContext(TasksContext);
   const handleFilter = async (e) => {
     setFilterText(e.target.innerText);
   };
 
   useEffect(() => {
-    setRole(roleData[0]);
-  }, [setRole]);
+    setRole(roleData[1]);
+  });
 
   return (
     <>
       <div className="flex justify-between items-center">
-        <SectionText text="Supervisor View" />
+        <SectionText text="Operator View" />
         <Filter filterText={filterText} handleFilter={handleFilter} />
       </div>
       <div className="grid mb-10 justify-center gap-3 grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
@@ -38,4 +38,4 @@ const SupervisorView = ({ tasks }) => {
   );
 };
 
-export default SupervisorView;
+export default OperatorView;

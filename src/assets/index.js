@@ -93,3 +93,10 @@ export const roleData = [
     permissions: ["Start", "Mark Complete"],
   },
 ];
+
+export const operatorData = [
+  {
+    id: 1,
+    name: "Niraj",
+  },
+];

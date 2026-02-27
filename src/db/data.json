@@ -54,7 +54,7 @@
       "content": "Dashboard breaks on small screens",
       "status": "Completed",
       "lastUpdate": "Feb 21, 2026",
-      "assignedTo": "Charlie"
+      "assignedTo": "Niraj"
     },
     {
       "id": 8,
@@ -62,7 +62,7 @@
       "content": "Prompt before cancelling task",
       "status": "Pending",
       "lastUpdate": "Feb 26, 2026",
-      "assignedTo": "David"
+      "assignedTo": "Niraj"
     },
     {
       "id": 9,
@@ -78,7 +78,7 @@
       "content": "Incorrect colors for statuses",
       "status": "Completed",
       "lastUpdate": "Feb 19, 2026",
-      "assignedTo": "Bob"
+      "assignedTo": "Niraj"
     },
     {
       "id": 11,
@@ -86,7 +86,7 @@
       "content": "Filter tasks by status",
       "status": "Cancelled",
       "lastUpdate": "Feb 17, 2026",
-      "assignedTo": "Charlie"
+      "assignedTo": "Niraj"
     },
     {
       "id": 12,

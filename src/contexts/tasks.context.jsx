@@ -48,6 +48,12 @@ function TasksProvider({ children }) {
     if (filterText === "All Tasks") return tasks;
     return tasks.filter((task) => task.status === filterText);
   }, [tasks, filterText]);
+
+  // Per Operator tasks
+  const perOperatorTasks = (operator) => {
+    return tasks.filter((task) => task.assignedTo === operator.name);
+  };
+
   return (
     <TasksContext.Provider
       value={{
@@ -59,6 +65,7 @@ function TasksProvider({ children }) {
         filterText,
         role,
         setRole,
+        perOperatorTasks,
       }}
     >
       {children}
