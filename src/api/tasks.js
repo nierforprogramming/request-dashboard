@@ -14,12 +14,9 @@ export const getTasks = async () => {
 };
 
 // Updates the status
-export const updateTaskStatusAPI = async (taskId, nextStatus) => {
+export const updateTaskStatusAPI = async (taskId, payload) => {
   return await fetchAPI(`${baseURL}/tasks/${taskId}`, {
     method: "PATCH",
-    body: JSON.stringify({
-      status: nextStatus,
-      lastUpdate: new Date().toDateString(),
-    }),
+    body: JSON.stringify(payload),
   });
 };

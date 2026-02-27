@@ -37,6 +37,7 @@ const OperatorView = ({ tasks }) => {
             lastUpdate={task.lastUpdate}
             agent={task.assignedTo}
             role={role}
+            message={task?.supervisorMessage}
           />
         ))}
       </div>

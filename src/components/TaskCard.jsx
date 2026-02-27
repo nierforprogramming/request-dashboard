@@ -3,10 +3,21 @@ import { MdUpdate } from "react-icons/md";
 import { statusColor } from "../assets";
 import RoleAction from "./RoleAction";
 
-const TaskCard = ({ id, status, title, content, lastUpdate, agent, role }) => {
+const TaskCard = ({
+  id,
+  status,
+  title,
+  content,
+  lastUpdate,
+  agent,
+  role,
+  message,
+}) => {
   const bgColor = statusColor[status].bgColor;
   const color = statusColor[status].color;
   const borderColor = statusColor[status].borderColor;
+  console.log(message);
+
   return (
     <div
       id="task-card"
@@ -40,6 +51,13 @@ const TaskCard = ({ id, status, title, content, lastUpdate, agent, role }) => {
           <div>Assigned To: </div>
           <div> {agent}</div>
         </div>
+
+        {message && (
+          <div className="flex text-gray-500 space-x-1">
+            <div>Message: </div>
+            <div> {message}</div>
+          </div>
+        )}
       </div>
     </div>
   );

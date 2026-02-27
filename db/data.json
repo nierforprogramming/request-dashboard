@@ -6,7 +6,8 @@
       "content": "Users can submit empty password field",
       "status": "Pending",
       "lastUpdate": "Feb 26, 2026",
-      "assignedTo": "Alice"
+      "assignedTo": "Alice",
+      "supervisorMessage": ""
     },
     {
       "id": "2",
@@ -14,23 +15,26 @@
       "content": "Improve spacing and card alignment",
       "status": "Cancelled",
       "lastUpdate": "Fri Feb 27 2026",
-      "assignedTo": "Bob"
+      "assignedTo": "Bob",
+      "supervisorMessage": "No longer needed"
     },
     {
       "id": "3",
       "title": "Add search functionality",
       "content": "Implement search filter for tasks",
-      "status": "Completed",
+      "status": "Cancelled",
       "lastUpdate": "Fri Feb 27 2026",
-      "assignedTo": "Charlie"
+      "assignedTo": "Charlie",
+      "supervisorMessage": "No need"
     },
     {
       "id": "4",
       "title": "Fix API timeout issue",
       "content": "Requests taking too long to respond",
-      "status": "Pending",
+      "status": "Completed",
       "lastUpdate": "Fri Feb 27 2026",
-      "assignedTo": "David"
+      "assignedTo": "David",
+      "supervisorMessage": ""
     },
     {
       "id": "5",
@@ -38,15 +42,17 @@
       "content": "Supervisor can reassign tasks",
       "status": "Pending",
       "lastUpdate": "Fri Feb 27 2026",
-      "assignedTo": "Alice"
+      "assignedTo": "Alice",
+      "supervisorMessage": ""
     },
     {
       "id": "6",
       "title": "Add loading skeleton",
       "content": "Show skeleton while fetching data",
-      "status": "Pending",
+      "status": "Cancelled",
       "lastUpdate": "Fri Feb 27 2026",
-      "assignedTo": "Bob"
+      "assignedTo": "Bob",
+      "supervisorMessage": ""
     },
     {
       "id": "7",
@@ -54,7 +60,8 @@
       "content": "Dashboard breaks on small screens",
       "status": "Completed",
       "lastUpdate": "Fri Feb 27 2026",
-      "assignedTo": "Niraj"
+      "assignedTo": "Niraj",
+      "supervisorMessage": ""
     },
     {
       "id": "8",
@@ -62,7 +69,8 @@
       "content": "Prompt before cancelling task",
       "status": "Completed",
       "lastUpdate": "Fri Feb 27 2026",
-      "assignedTo": "Niraj"
+      "assignedTo": "Niraj",
+      "supervisorMessage": ""
     },
     {
       "id": "9",
@@ -70,7 +78,8 @@
       "content": "Reduce unnecessary network requests",
       "status": "Pending",
       "lastUpdate": "Fri Feb 27 2026",
-      "assignedTo": "Alice"
+      "assignedTo": "Alice",
+      "supervisorMessage": ""
     },
     {
       "id": "10",
@@ -78,7 +87,8 @@
       "content": "Incorrect colors for statuses",
       "status": "Completed",
       "lastUpdate": "Fri Feb 27 2026",
-      "assignedTo": "Niraj"
+      "assignedTo": "Niraj",
+      "supervisorMessage": ""
     },
     {
       "id": "11",
@@ -86,7 +96,8 @@
       "content": "Filter tasks by status",
       "status": "Completed",
       "lastUpdate": "Fri Feb 27 2026",
-      "assignedTo": "Niraj"
+      "assignedTo": "Niraj",
+      "supervisorMessage": ""
     },
     {
       "id": "12",
@@ -94,7 +105,8 @@
       "content": "Toggle between Supervisor and Operator",
       "status": "Completed",
       "lastUpdate": "Fri Feb 27 2026",
-      "assignedTo": "David"
+      "assignedTo": "David",
+      "supervisorMessage": ""
     },
     {
       "id": "13",
@@ -102,7 +114,8 @@
       "content": "Use backend of your choice",
       "status": "Cancelled",
       "lastUpdate": "Fri Feb 27 2026",
-      "assignedTo": "Niraj"
+      "assignedTo": "Niraj",
+      "supervisorMessage": "No need"
     }
   ]
 }

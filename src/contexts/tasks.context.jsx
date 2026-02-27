@@ -88,19 +88,31 @@ function TasksProvider({ children }) {
   };
 
   // It updates status of the tasks
-  const updateTaskStatus = async (taskId, nextStatus) => {
+  const updateTaskStatus = async (
+    taskId,
+    nextStatus,
+    supervisorMessage = "",
+  ) => {
     const id = Number(taskId);
+    const payload = {
+      status: nextStatus,
+      lastUpdate: new Date().toDateString(),
+    };
 
-    const res = await updateTaskStatusAPI(id, nextStatus);
+    // Only if message is provided
+    if (supervisorMessage?.trim()) {
+      payload.supervisorMessage = supervisorMessage.trim();
+    }
+
+    const res = await updateTaskStatusAPI(id, payload);
     if (!res.success) {
       setError(res.error);
       return;
     }
 
+    //Local state update
     setTasks((prev) =>
-      prev.map((task) =>
-        task.id === taskId ? { ...task, status: nextStatus } : task,
-      ),
+      prev.map((task) => (task.id === taskId ? { ...task, ...payload } : task)),
     );
   };
 

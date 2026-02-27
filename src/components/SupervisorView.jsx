@@ -15,6 +15,10 @@ const SupervisorView = ({ tasks }) => {
     setRole(roleData[0]);
   }, [setRole]);
 
+  {
+    console.log(tasks);
+  }
+
   return (
     <>
       <div className="flex justify-between items-center">
@@ -32,6 +36,7 @@ const SupervisorView = ({ tasks }) => {
             lastUpdate={task.lastUpdate}
             agent={task.assignedTo}
             role={role}
+            message={task?.supervisorMessage}
           />
         ))}
       </div>

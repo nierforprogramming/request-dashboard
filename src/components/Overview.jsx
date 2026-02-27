@@ -25,6 +25,7 @@ const Overview = ({ tasks }) => {
             content={task.content}
             lastUpdate={task.lastUpdate}
             agent={task.assignedTo}
+            message={task?.supervisorMessage}
           />
         ))}
       </div>

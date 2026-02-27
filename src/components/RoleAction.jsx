@@ -94,8 +94,8 @@ const RoleAction = ({ role, taskId, taskStatus }) => {
           open={statusModalOpen}
           currentStatus={taskStatus}
           onClose={() => setStatusModalOpen(false)}
-          onSelect={(newStatus) => {
-            updateTaskStatus(taskId, newStatus);
+          onSubmit={(newStatus, message) => {
+            updateTaskStatus(taskId, newStatus, message);
             setStatusModalOpen(false);
           }}
         />
