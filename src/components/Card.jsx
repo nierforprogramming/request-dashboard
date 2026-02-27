@@ -1,6 +1,6 @@
 import { statusIcon } from "../assets";
 
-const Card = ({ status, value }) => {
+const Card = ({ status, value, className }) => {
   const Icon = statusIcon[status];
   return (
     <div
@@ -16,7 +16,7 @@ const Card = ({ status, value }) => {
           <p>{status}</p>
         </div>
 
-        <div className="text-3xl font-bold">
+        <div className={`${className} text-3xl font-bold`}>
           <p>{value}</p>
         </div>
       </div>

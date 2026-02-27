@@ -9,11 +9,12 @@ const RoleAction = ({ role, taskId, taskStatus }) => {
   const [statusModalOpen, setStatusModalOpen] = useState(false);
 
   const actions = useMemo(() => {
+    // Supervisor will have full controll whichever status it will be
     if (role.name === "Supervisor") {
       return ["Change Status", "Reassign"];
     }
 
-    // Operator won't be able to change the status if they are :
+    // Operator won't be able to change the status if the status are :
     if (taskStatus === "Cancelled" || taskStatus === "Completed") return [];
 
     // Permissions for Operator
@@ -28,7 +29,6 @@ const RoleAction = ({ role, taskId, taskStatus }) => {
 
   const handleAction = async (action) => {
     // For Operator
-    // Operator
     if (action === "Start") {
       await updateTaskStatus(taskId, "Active");
       setOpen(false);
@@ -96,8 +96,6 @@ const RoleAction = ({ role, taskId, taskStatus }) => {
           onClose={() => setStatusModalOpen(false)}
           onSelect={(newStatus) => {
             updateTaskStatus(taskId, newStatus);
-            console.log(taskId);
-
             setStatusModalOpen(false);
           }}
         />

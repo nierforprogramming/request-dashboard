@@ -12,7 +12,7 @@
       "id": "2",
       "title": "Update dashboard UI",
       "content": "Improve spacing and card alignment",
-      "status": "Pending",
+      "status": "Active",
       "lastUpdate": "Fri Feb 27 2026",
       "assignedTo": "Bob"
     },
@@ -20,23 +20,23 @@
       "id": "3",
       "title": "Add search functionality",
       "content": "Implement search filter for tasks",
-      "status": "Completed",
-      "lastUpdate": "Feb 20, 2026",
+      "status": "Pending",
+      "lastUpdate": "Fri Feb 27 2026",
       "assignedTo": "Charlie"
     },
     {
       "id": "4",
       "title": "Fix API timeout issue",
       "content": "Requests taking too long to respond",
-      "status": "Cancelled",
-      "lastUpdate": "Feb 18, 2026",
+      "status": "Pending",
+      "lastUpdate": "Fri Feb 27 2026",
       "assignedTo": "David"
     },
     {
       "id": "5",
       "title": "Implement task reassignment",
       "content": "Supervisor can reassign tasks",
-      "status": "Completed",
+      "status": "Pending",
       "lastUpdate": "Fri Feb 27 2026",
       "assignedTo": "Alice"
     },
@@ -44,7 +44,7 @@
       "id": "6",
       "title": "Add loading skeleton",
       "content": "Show skeleton while fetching data",
-      "status": "Cancelled",
+      "status": "Pending",
       "lastUpdate": "Fri Feb 27 2026",
       "assignedTo": "Bob"
     },
@@ -60,7 +60,7 @@
       "id": "8",
       "title": "Add cancel confirmation",
       "content": "Prompt before cancelling task",
-      "status": "Pending",
+      "status": "Active",
       "lastUpdate": "Fri Feb 27 2026",
       "assignedTo": "Niraj"
     },
@@ -68,8 +68,8 @@
       "id": "9",
       "title": "Optimize API calls",
       "content": "Reduce unnecessary network requests",
-      "status": "Active",
-      "lastUpdate": "Feb 23, 2026",
+      "status": "Pending",
+      "lastUpdate": "Fri Feb 27 2026",
       "assignedTo": "Alice"
     },
     {
@@ -84,7 +84,7 @@
       "id": "11",
       "title": "Add task filtering",
       "content": "Filter tasks by status",
-      "status": "Completed",
+      "status": "Pending",
       "lastUpdate": "Fri Feb 27 2026",
       "assignedTo": "Niraj"
     },
@@ -92,15 +92,15 @@
       "id": "12",
       "title": "Implement role switcher",
       "content": "Toggle between Supervisor and Operator",
-      "status": "Active",
-      "lastUpdate": "Feb 26, 2026",
+      "status": "Pending",
+      "lastUpdate": "Fri Feb 27 2026",
       "assignedTo": "David"
     },
     {
       "id": "13",
       "title": "Implement backend for the app",
       "content": "Use backend of your choice",
-      "status": "Completed",
+      "status": "Pending",
       "lastUpdate": "Fri Feb 27 2026",
       "assignedTo": "Niraj"
     }

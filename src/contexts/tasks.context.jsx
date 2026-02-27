@@ -102,6 +102,20 @@ function TasksProvider({ children }) {
     );
   };
 
+  // Get workload for active status
+  const getActiveWorkLoad = () => {
+    // Removes duplicate name and converts back to array
+    const operators = [...new Set(tasks.map((task) => task.assignedTo))];
+
+    // Filters Active tasks and returns with name
+    return operators.map((name) => ({
+      name,
+      active: tasks.filter(
+        (task) => task.assignedTo === name && task.status === "Active",
+      ).length,
+    }));
+  };
+
   return (
     <TasksContext.Provider
       value={{
@@ -116,6 +130,7 @@ function TasksProvider({ children }) {
         perOperatorTasks,
         perOperatorStatus,
         updateTaskStatus,
+        getActiveWorkLoad,
       }}
     >
       {children}
