@@ -1,26 +1,202 @@
-import { createContext, useEffect, useMemo, useState } from "react";
-import { getTasks, reassignTaskAPI, updateTaskStatusAPI } from "../api/tasks";
+import { createContext, useEffect, useMemo, useReducer, useState } from "react";
 
 const TasksContext = createContext();
 
+const TasksData = [
+  {
+    id: "1",
+    title: "Fix login validation bug",
+    content: "Users can submit empty password field",
+    status: "Pending",
+    lastUpdate: "Fri Feb 27 2026",
+    assignedTo: "Charlie",
+    supervisorMessage: "",
+  },
+  {
+    id: "2",
+    title: "Update dashboard UI",
+    content: "Improve spacing and card alignment",
+    status: "Active",
+    lastUpdate: "Fri Feb 27 2026",
+    assignedTo: "Bob",
+    supervisorMessage: "No longer needed",
+  },
+  {
+    id: "3",
+    title: "Add search functionality",
+    content: "Implement search filter for tasks",
+    status: "Active",
+    lastUpdate: "Fri Feb 27 2026",
+    assignedTo: "Charlie",
+    supervisorMessage: "No need",
+  },
+  {
+    id: "4",
+    title: "Fix API timeout issue",
+    content: "Requests taking too long to respond",
+    status: "Completed",
+    lastUpdate: "Fri Feb 27 2026",
+    assignedTo: "David",
+    supervisorMessage: "",
+  },
+  {
+    id: "5",
+    title: "Implement task reassignment",
+    content: "Supervisor can reassign tasks",
+    status: "Pending",
+    lastUpdate: "Fri Feb 27 2026",
+    assignedTo: "Bob",
+    supervisorMessage: "",
+  },
+  {
+    id: "6",
+    title: "Add loading skeleton",
+    content: "Show skeleton while fetching data",
+    status: "Cancelled",
+    lastUpdate: "Fri Feb 27 2026",
+    assignedTo: "Bob",
+    supervisorMessage: "Project restructure",
+  },
+  {
+    id: "7",
+    title: "Fix mobile responsiveness",
+    content: "Dashboard breaks on small screens",
+    status: "Completed",
+    lastUpdate: "Fri Feb 27 2026",
+    assignedTo: "Niraj",
+    supervisorMessage: "",
+  },
+  {
+    id: "8",
+    title: "Add cancel confirmation",
+    content: "Prompt before cancelling task",
+    status: "Completed",
+    lastUpdate: "Wed Mar 04 2026",
+    assignedTo: "Niraj",
+    supervisorMessage: "",
+  },
+  {
+    id: "9",
+    title: "Optimize API calls",
+    content: "Reduce unnecessary network requests",
+    status: "Active",
+    lastUpdate: "Fri Feb 27 2026",
+    assignedTo: "Niraj",
+    supervisorMessage: "Urgent task",
+  },
+  {
+    id: "10",
+    title: "Fix status badge colors",
+    content: "Incorrect colors for statuses",
+    status: "Pending",
+    lastUpdate: "Fri Feb 27 2026",
+    assignedTo: "Niraj",
+    supervisorMessage: "",
+  },
+];
+
+const inititalState = {
+  requests: TasksData,
+  currentIndex: 0,
+};
+
+// Helper function to change status automatically
+const nextStatus = (status) => {
+  switch (status) {
+    case "Pending":
+      return "Active";
+
+    case "Active":
+      return "Completed";
+
+    case "Completed":
+      return "Cancelled";
+
+    case "Cancelled":
+      return "Pending";
+
+    default:
+      return status;
+  }
+};
+
+// Every state change is done by one dispatch
+function reducer(state, action) {
+  switch (action.type) {
+    // Manual update like PATCH but local
+    case "UPDATE_STATUS": {
+      const { id, status, supervisorMessage = "" } = action.payload;
+
+      const updated = state.requests.map((request) => {
+        if (request.id !== id) return request;
+
+        return {
+          ...request,
+          status,
+          lastUpdate: new Date().toDateString(),
+          supervisorMessage: supervisorMessage.trim()
+            ? supervisorMessage.trim()
+            : request.supervisorMessage,
+        };
+      });
+
+      return { ...state, requests: updated };
+    }
+
+    case "REASSIGN_TASK": {
+      const { id, assignedTo, supervisorMessage = "" } = action.payload;
+
+      const updated = state.requests.map((request) => {
+        if (request.id !== id) return request;
+
+        return {
+          ...request,
+          assignedTo,
+          lastUpdate: new Date().toDateString(),
+          supervisorMessage: supervisorMessage.trim()
+            ? supervisorMessage.trim()
+            : request.supervisorMessage,
+        };
+      });
+
+      return { ...state, requests: updated };
+    }
+    case "TICK": {
+      const updated = state.requests.map((task, index) => {
+        if (index !== state.currentIndex) return task;
+
+        return {
+          ...task,
+          status: nextStatus(task.status),
+          lastUpdate: new Date().toDateString(),
+        };
+      });
+
+      return {
+        ...state,
+        requests: updated,
+        currentIndex: (state.currentIndex + 1) % state.requests.length,
+      };
+    }
+    default:
+      return state;
+  }
+}
+
 function TasksProvider({ children }) {
-  const [tasks, setTasks] = useState([]);
   const [error, setError] = useState(null);
   const [filterText, setFilterText] = useState("All Tasks");
   const [role, setRole] = useState("");
+  const [state, dispatch] = useReducer(reducer, inititalState);
+
+  const tasks = state.requests;
 
   useEffect(() => {
-    const _getTasks = async () => {
-      const res = await getTasks();
-      if (!res.success) {
-        return setError(res.error);
-      }
+    const id = setInterval(() => {
+      dispatch({ type: "TICK" });
+    }, 3000);
 
-      setError(null);
-      setTasks(res.data);
-    };
-
-    _getTasks();
+    return () => clearInterval(id);
   }, []);
 
   // Getting status Tasks
@@ -93,7 +269,6 @@ function TasksProvider({ children }) {
     nextStatus,
     supervisorMessage = "",
   ) => {
-    const id = Number(taskId);
     const payload = {
       status: nextStatus,
       lastUpdate: new Date().toDateString(),
@@ -104,22 +279,19 @@ function TasksProvider({ children }) {
       payload.supervisorMessage = supervisorMessage.trim();
     }
 
-    const res = await updateTaskStatusAPI(id, payload);
-    if (!res.success) {
-      setError(res.error);
-      return;
-    }
-
     //Local state update
-    setTasks((prev) =>
-      prev.map((task) => (task.id === taskId ? { ...task, ...payload } : task)),
-    );
+    dispatch({
+      type: "UPDATE_STATUS",
+      payload: {
+        id: taskId,
+        status: nextStatus,
+        supervisorMessage,
+      },
+    });
   };
 
   // Reassign tasks
   const reassignTask = async (taskId, nextAgent, message = "") => {
-    const id = Number(taskId);
-
     const payload = {
       assignedTo: nextAgent,
       lastUpdate: new Date().toDateString(),
@@ -127,16 +299,14 @@ function TasksProvider({ children }) {
 
     if (message?.trim()) payload.supervisorMessage = message.trim();
 
-    const res = await reassignTaskAPI(id, payload);
-    if (!res.success) {
-      setError(res.error);
-      return;
-    }
-
-    setTasks((prev) =>
-      prev.map((task) => (task.id === taskId ? { ...task, ...payload } : task)),
-    );
-
+    dispatch({
+      type: "REASSIGN_TASK",
+      payload: {
+        id: taskId,
+        assignedTo: nextAgent,
+        supervisorMessage: message,
+      },
+    });
     return;
   };
 
@@ -170,6 +340,7 @@ function TasksProvider({ children }) {
         updateTaskStatus,
         getActiveWorkLoad,
         reassignTask,
+        setError,
       }}
     >
       {children}

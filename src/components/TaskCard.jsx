@@ -16,7 +16,6 @@ const TaskCard = ({
   const bgColor = statusColor[status].bgColor;
   const color = statusColor[status].color;
   const borderColor = statusColor[status].borderColor;
-  console.log(message);
 
   return (
     <div

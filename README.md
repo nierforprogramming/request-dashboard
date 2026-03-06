@@ -26,7 +26,7 @@ A role-based request management dashboard that allows Supervisors and Operators 
 
 - Styling: Tailwind CSS
 
-- Backend (Mock API): json-server
+- Backend: Local State
 
 - State Management: React Context API
 
@@ -51,11 +51,9 @@ npm install
 npm run dev
 ```
 
-### This runs both:
+### This runs:
 
 - Vite frontend → localhost:5173
-
-- json-server API → localhost:3000
 
 ## 🧩 Roles & Permissions
 
